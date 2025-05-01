@@ -17,8 +17,8 @@
 # include <unistd.h>
 # include <stdarg.h>
 
-int ft_putchar_fd(char c, int fd);
-int ft_putstr(char *s, int fd);
+int ft_putchar_fd(char c);
+int ft_putstr(char *s);
 int	ft_printf(const char *format, ...);
 
 #endif

@@ -19,7 +19,7 @@ int	specifier_type(const char *specifier, va_list args)
 	count = 0;
 	if (specifier == 'c')
 	{
-		ft_putchar(va_arg(args, char));
+		putchar(va_arg(args, char));
 		count++;
 	}
 }
