@@ -10,18 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Libft/libft.h"
+#include "libprintf.h"
 
-int	specifier_type(const char *specifier, va_list args)
+int	specifier_type(char specifier, va_list args)
 {
 	int	count;
 
 	count = 0;
 	if (specifier == 'c')
-	{
-		putchar(va_arg(args, char));
-		count++;
-	}
+		count += ft_putchar(va_arg(args, int));
+	else if (specifier == 's')
+		count += ft_putstr(va_args(args, char *));
+	else if (specifier == 'd')
+		count += 
 }
 
 int	ft_printf(const char *format, ...)
@@ -38,17 +39,18 @@ int	ft_printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-			if (format[i + 1] != '\0')
-			{
-				specifier_type(format[i], args);
-				count++;
-			}
+			i++;
+			count += specifier_type(format[i], args);
+		}
+		else
+		{
+			ft_putchar(format[i]);
+			count++;
 		}
 		i++;
-		ft_putstr(format[i]);
-		count++;
 	}
 	va_end(args);
+	return (count)
 }
 int main()
 {
