@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libftprintf.h"
 
-int	putstr(char *s, int fd)
+int	ft_putstr(char *s, int fd)
 {
 	int	i;
 
