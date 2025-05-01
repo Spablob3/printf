@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libprintf.h"
+#include "libftprintf.h"
 
 int	specifier_type(char specifier, va_list args)
 {
@@ -20,9 +20,10 @@ int	specifier_type(char specifier, va_list args)
 	if (specifier == 'c')
 		count += ft_putchar(va_arg(args, int));
 	else if (specifier == 's')
-		count += ft_putstr(va_args(args, char *));
-	else if (specifier == 'd')
-		count += 
+		count += ft_putstr(va_arg(args, char *));
+	else if (specifier == 'd' || specifier == 'i')
+		count += ft_putnbr(va_arg(args, int));
+	return(count);
 }
 
 int	ft_printf(const char *format, ...)
@@ -50,12 +51,12 @@ int	ft_printf(const char *format, ...)
 		i++;
 	}
 	va_end(args);
-	return (count)
+	return (count);
 }
 int main()
 {
 	int		age = 30;
 	char	name[] = "Joao";
 	
-	ft_printf("Hello my names is %s and im %d years old, name, age");
+	ft_printf("Hello my names is %s and im %d years old", name, age);
 }
