@@ -1,6 +1,6 @@
 NAME = libft.a
 
-SRC = $(addsuffix .c, ft_putchar ft_putstr ft_printf)
+SRC = $(addsuffix .c, ft_putchar ft_putstr ft_printf ft_putnbr)
 
 OBJS := $(SRC:%.c=%.o)
 

@@ -19,6 +19,7 @@
 
 int ft_putchar_fd(char c);
 int ft_putstr(char *s);
+void ft_putnbr(int n);
 int	ft_printf(const char *format, ...);
 
 #endif
