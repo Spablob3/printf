@@ -1,42 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: joapedro <joapedro@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/11 10:09:45 by joapedro          #+#    #+#             */
-/*   Updated: 2025/04/11 14:26:30 by joapedro         ###   ########.fr       */
+/*   Created: 2025/04/18 11:04:41 by joapedro          #+#    #+#             */
+/*   Updated: 2025/04/24 08:56:43 by joapedro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h" 
+#include "libft.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+int	putstr(char *s, int fd)
 {
-	unsigned int	i;
-	unsigned char	*s1p;
-	unsigned char	*s2p;
+	int	i;
 
-	s1p = (unsigned char *)s1;
-	s2p = (unsigned char *)s2;
 	i = 0;
-	while (i < n)
+	while (s[i])
 	{
-		if (s1p[i] != s2p[i])
-		{
-			return (s1p[i] - s2p[i]);
-		}
+		write(1, &s[i], 1);
 		i++;
 	}
-	return (0);
+	return (s);
 }
-/*
-int main()
-{
-	char	s1[] = "joaopedro";
-	char	s2[] = "z";
-
-	printf("%d", ft_memcmp(s1, s2, 1));   
-}
-*/
