@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_unsigned_putnbr.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: joapedro <joapedro@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/18 11:04:41 by joapedro          #+#    #+#             */
-/*   Updated: 2025/05/02 10:52:45 by joapedro         ###   ########.fr       */
+/*   Created: 2025/05/02 12:16:58 by joapedro          #+#    #+#             */
+/*   Updated: 2025/05/02 12:49:58 by joapedro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putstr(char *s)
+int	ft_unsigned_putnbr(unsigned int n)
 {
-	int	i;
+	int	count;
 
-	if (!s)
+	count = 0;
+	n = (long)n;
+	if (n > 9)
 	{
-		s = "(null)";
+		count += ft_putnbr(n / 10);
 	}
-	i = 0;
-	while (s[i])
-	{
-		write(1, &s[i], 1);
-		i++;
-	}
-	return (i);
+	count += ft_putchar(n % 10 + '0');
+	return (count);
 }

@@ -1,6 +1,18 @@
-NAME = libft.a
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: joapedro <joapedro@student.42porto.com>    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2025/05/02 10:12:33 by joapedro          #+#    #+#              #
+#    Updated: 2025/05/02 12:18:51 by joapedro         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
-SRC = $(addsuffix .c, ft_putchar ft_putstr ft_printf ft_putnbr)
+NAME = libftprintf.a
+
+SRC = $(addsuffix .c, ft_putchar ft_putstr ft_printf ft_putnbr ft_unsigned_putnbr)
 
 OBJS := $(SRC:%.c=%.o)
 

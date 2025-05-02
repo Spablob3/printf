@@ -6,11 +6,11 @@
 /*   By: joapedro <joapedro@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 09:46:32 by joapedro          #+#    #+#             */
-/*   Updated: 2025/04/30 12:08:31 by joapedro         ###   ########.fr       */
+/*   Updated: 2025/05/02 13:03:49 by joapedro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 int	specifier_type(char specifier, va_list args)
 {
@@ -23,17 +23,20 @@ int	specifier_type(char specifier, va_list args)
 		count += ft_putstr(va_arg(args, char *));
 	else if (specifier == 'd' || specifier == 'i')
 		count += ft_putnbr(va_arg(args, int));
-	return(count);
+	else if (specifier == '%')
+		count += ft_putchar('%');
+	else if (specifier == 'u')
+		count += ft_unsigned_putnbr(va_arg(args, unsigned int));
+	return (count);
 }
 
 int	ft_printf(const char *format, ...)
 {
 	va_list		args;
-	va_start	(args, format);
+	int			i;
+	int			count;
 
-	int i;
-	int	count;
-
+	va_start (args, format);
 	i = 0;
 	count = 0;
 	while (format[i] != '\0')
@@ -53,10 +56,16 @@ int	ft_printf(const char *format, ...)
 	va_end(args);
 	return (count);
 }
+
 int main()
 {
-	int		age = 30;
 	char	name[] = "Joao";
+	int		age = 30;
+	ft_printf("Hello my name is %s and i have %d%% of battery\n", name, age);
+	printf("Hello my name is %s and i have %d%% of battery\n", name, age);
+
+	ft_printf("Unsigned int: %u\n", -1);
+	printf("Unsigned int: %u\n", -1);
+
 	
-	ft_printf("Hello my names is %s and im %d years old", name, age);
 }
