@@ -6,7 +6,7 @@
 /*   By: joapedro <joapedro@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 09:46:32 by joapedro          #+#    #+#             */
-/*   Updated: 2025/05/02 13:03:49 by joapedro         ###   ########.fr       */
+/*   Updated: 2025/05/02 14:46:38 by joapedro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,10 @@ int	specifier_type(char specifier, va_list args)
 		count += ft_putchar('%');
 	else if (specifier == 'u')
 		count += ft_unsigned_putnbr(va_arg(args, unsigned int));
+	else if (specifier == 'x')
+		count += ft_puthexa(va_arg(args, long));
+		else if (specifier == 'X')
+		count += ft_puthexa(va_arg(args, long));
 	return (count);
 }
 
