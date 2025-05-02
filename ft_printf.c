@@ -61,7 +61,7 @@ int main()
 {
 	char	name[] = "Joao";
 	int		age = 30;
-	ft_printf("Hello my name is %s and i have %d%% of battery\n", name, age);
+	ft_printf("Hello my name is %s and i have %d%% of battery OLA\n", name, age);
 	printf("Hello my name is %s and i have %d%% of battery\n", name, age);
 
 	ft_printf("Unsigned int: %u\n", -1);
