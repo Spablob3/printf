@@ -24,5 +24,6 @@ int	ft_printf(const char *format, ...);
 int	ft_unsigned_putnbr(unsigned int n);
 int	ft_puthexa(unsigned long n);
 int ft_puthexa_big(unsigned long n);
+int ft_pointer(void *ptr);
 
 #endif

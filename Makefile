@@ -12,7 +12,7 @@
 
 NAME = libftprintf.a
 
-SRC = $(addsuffix .c, ft_putchar ft_putstr ft_printf ft_putnbr ft_unsigned_putnbr ft_puthexa ft_puthexa_big)
+SRC = $(addsuffix .c, ft_putchar ft_putstr ft_printf ft_putnbr ft_unsigned_putnbr ft_puthexa ft_puthexa_big ft_pointer)
 
 OBJS := $(SRC:%.c=%.o)
 
