@@ -10,7 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_puthexa(unsigned long)
+#include "ft_printf.h"
+
+int	ft_puthexa(unsigned long n)
 {
-	
+    int     count;
+    char    *hexa;
+
+    hexa = "0123456789abcdef"; 
+    count = 0;
+	if (n >= 16)
+    {
+        count += ft_puthexa(n / 16);
+    }
+    count += ft_putchar(hexa[n % 16]);
+    return (count);
 }

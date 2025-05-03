@@ -28,9 +28,9 @@ int	specifier_type(char specifier, va_list args)
 	else if (specifier == 'u')
 		count += ft_unsigned_putnbr(va_arg(args, unsigned int));
 	else if (specifier == 'x')
-		count += ft_puthexa(va_arg(args, long));
-		else if (specifier == 'X')
-		count += ft_puthexa(va_arg(args, long));
+		count += ft_puthexa(va_arg(args, unsigned int));
+	else if (specifier == 'X')
+		count += ft_puthexa_big(va_arg(args, unsigned int));
 	return (count);
 }
 
@@ -65,11 +65,22 @@ int main()
 {
 	char	name[] = "Joao";
 	int		age = 30;
-	ft_printf("Hello my name is %s and i have %d%% of battery OLA\n", name, age);
+
+	// %s, %d; %%;
+	ft_printf("My printf: Hello my name is %s and i have %d%% of battery\n", name, age);
 	printf("Hello my name is %s and i have %d%% of battery\n", name, age);
+	// %c
 
-	ft_printf("Unsigned int: %u\n", -1);
+	ft_printf("My printf: char: %c\n", 'A');
+	printf("char: %c\n", 'A');
+
+	// %u
+	ft_printf("My printf: Unsigned int: %u\n", -1);
 	printf("Unsigned int: %u\n", -1);
-
-	
+	// %x
+	ft_printf("My printf: Hexadecimal: %x\n", 241);
+	printf("Hexadecimal: %x\n", 241);
+	// %X
+	ft_printf("My printf: Hexadecimal Big: %X\n", 100);
+	printf("Hexadecimal Big: %X\n", 100);
 }

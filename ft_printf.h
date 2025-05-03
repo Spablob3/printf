@@ -22,5 +22,7 @@ int	ft_putstr(char *s);
 int	ft_putnbr(int n);
 int	ft_printf(const char *format, ...);
 int	ft_unsigned_putnbr(unsigned int n);
+int	ft_puthexa(unsigned long n);
+int ft_puthexa_big(unsigned long n);
 
 #endif
