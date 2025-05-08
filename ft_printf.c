@@ -6,7 +6,7 @@
 /*   By: joapedro <joapedro@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 09:46:32 by joapedro          #+#    #+#             */
-/*   Updated: 2025/05/02 14:46:38 by joapedro         ###   ########.fr       */
+/*   Updated: 2025/05/05 09:18:19 by joapedro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ int	ft_printf(const char *format, ...)
 	va_end(args);
 	return (count);
 }
-
+/*
 int main()
 {
 	char	name[] = "Joao";
@@ -70,24 +70,28 @@ int main()
 	void 	*ptr = &name;
 
 	// %s, %d; %%;
-	ft_printf("My printf: Hello my name is %s and i have %d%% of battery\n", name, age);
-	printf("Hello my name is %s and i have %d%% of battery\n", name, age);
+	ft_printf("My printf: Hello my name is %s and i'm %d\n", name, age);
+	printf("OG printf: Hello my name is %s and i'm %d\n", name, age);
 	// %c
 
+	ft_printf("%%\n");
+	printf("%%\n");
+
 	ft_printf("My printf: char: %c\n", 'A');
-	printf("char: %c\n", 'A');
+	printf("OG printf: char: %c\n", 'A');
 
 	// %u
 	ft_printf("My printf: Unsigned int: %u\n", -1);
-	printf("Unsigned int: %u\n", -1);
+	printf("OG printf: Unsigned int: %u\n", -1);
 	// %x
 	ft_printf("My printf: Hexadecimal: %x\n", 75);
-	printf("Hexadecimal: %x\n", 75);
+	printf("OG printf: Hexadecimal: %x\n", 75);
 	// %X
 	ft_printf("My printf: Hexadecimal Big: %X\n", 100);
-	printf("Hexadecimal Big: %X\n", 100);
+	printf("OG printf: Hexadecimal Big: %X\n", 100);
 
 	ft_printf("My printf: pointer: %p\n", (void *)ptr);
-	printf("pointer: %p\n", (void *)ptr);
+	printf("OG printf: pointer: %p\n", (void *)ptr);
 
 }
+*/
